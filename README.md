@@ -15,6 +15,10 @@
 - **Intent Replay (TODO)**: Resend captured intents to test the stability and security of applications.
 - **Logging and Reporting (TODO)**: Detailed logging of all activities and comprehensive reporting to aid in vulnerability assessment.
 
+  
+<p align="center">
+  <img src="https://github.com/Ch0pin/stheno/assets/4659186/fd49c39e-865b-4dc3-b2d1-59a0f4594028" alt="monitor">
+</p>
 
 ## Installation 
 
