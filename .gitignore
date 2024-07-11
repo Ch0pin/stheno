@@ -1,0 +1,45 @@
+# Eclipse files
+Intent-monitor/.classpath
+Intent-monitor/.project
+Intent-monitor/.settings/
+
+# IntelliJ IDEA files
+Intent-monitor/.idea/
+Intent-monitor/.run/
+Intent-monitor/out/
+Intent-monitor/*.iml
+Intent-monitor/*.ipr
+Intent-monitor/*.iws
+Intent-monitor/.attach_pid*
+Intent-monitor/*.hprof
+
+# macOS specific files
+**/.DS_Store
+
+# Build directories
+Intent-monitor/bin/
+Intent-monitor/target/
+Intent-monitor/build/
+Intent-monitor/classes/
+Intent-monitor/.gradle/
+Intent-monitor/node_modules/
+
+# VSCode files
+.vscode/
+
+# Temporary files
+*-tmp/
+**/tmp/
+
+# Python bytecode and cache
+*/__pycache__/
+
+# Miscellaneous
+*.jobf
+*.class
+*.dump
+*.log
+*.cfg
+*.orig
+*.apk
+*.jar
