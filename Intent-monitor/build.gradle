@@ -1,0 +1,57 @@
+plugins {
+  id 'application'
+  id 'org.openjfx.javafxplugin' version '0.1.0'
+  id 'org.beryx.jlink' version '2.26.0'
+}
+
+repositories {
+  mavenCentral()
+}
+
+javafx {
+  version = "21"
+  modules = ['javafx.controls', 'javafx.fxml', 'javafx.web']
+}
+
+application {
+  mainModule = 'org.medusa.intentmonitor'
+  mainClass = 'org.medusa.intentmonitor.MainScreen'
+}
+
+description = 'Stheno: A tool for analyzing and manipulating intents in Android applications'
+
+jlink {
+  options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+  launcher {
+    name = 'Stheno'
+  }
+  jpackage {
+    installerOptions = [
+            '--description', project.description,
+    ]
+    installerType = project.findProperty('installerType') // we will pass this from the command line (example: -PinstallerType=msi)
+    imageOptions += ['--icon', 'src/main/resources/stheno.png']
+
+    if(installerType == 'pkg'){
+      imageOptions += ['--icon', 'src/main/resources/stheno.icns']
+    }
+    else{
+      imageOptions += ['--icon', 'src/main/resources/stheno.png']
+    }
+
+    if (installerType == 'msi') {
+      installerOptions += [
+              '--win-per-user-install', '--win-dir-chooser',
+              '--win-menu', '--win-shortcut'
+      ]
+    }
+    if (installerType == 'rpm') {
+      installerOptions += [
+              '--linux-rpm-license-type', 'GPLv3'
+      ]
+    }
+  }
+}
+dependencies {
+  implementation 'org.json:json:20240303'
+}

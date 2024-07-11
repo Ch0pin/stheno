@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.medusa.intentmonitor.controllers.SettingsDialogController"
+      spacing="10" style="-fx-padding: 20;">
+    <Label text="Server Address:"/>
+    <TextField fx:id="serverAddressField"/>
+    <Label text="Server Port:"/>
+    <TextField fx:id="serverPortField"/>
+    <HBox spacing="10">
+        <Button text="Apply" onAction="#handleApply"/>
+        <Button text="Cancel" onAction="#handleCancel"/>
+    </HBox>
+</VBox>

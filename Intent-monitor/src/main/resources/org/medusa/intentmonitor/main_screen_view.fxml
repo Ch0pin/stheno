@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.web.*?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.medusa.intentmonitor.controllers.MainScreenController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu fx:id="mainMenu" mnemonicParsing="false" text="Intent Monitor">
+          <items>
+            <MenuItem fx:id="startMonitor" mnemonicParsing="false" text="Start" onAction="#handleMenuAction"/>
+            <MenuItem fx:id="stopMonitor" mnemonicParsing="false" text="Stop" onAction="#handleMenuAction"/>
+            <MenuItem fx:id="clearLogs" mnemonicParsing="false" text="Clear logs" onAction="#handleMenuAction"/>
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem text="Preferences..." onAction="#handleSettings"/>
+            <MenuItem fx:id="exit" text="Exit" onAction="#handleMenuAction"/>
+
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane VBox.vgrow="ALWAYS" orientation="VERTICAL">
+      <AnchorPane>
+        <children>
+          <TableView fx:id="intentTableView" prefHeight="200.0" prefWidth="200.0"
+                     AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                     AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                     onMouseClicked="#handleTableViewClick">
+            <columns>
+              <TableColumn fx:id="indexColumn" text="Index">
+                <cellValueFactory>
+                  <PropertyValueFactory property="index"/>
+                </cellValueFactory>
+              </TableColumn>
+              <TableColumn fx:id="descriptionColumn" text="Description">
+                <cellValueFactory>
+                  <PropertyValueFactory property="description"/>
+                </cellValueFactory>
+              </TableColumn>
+              <TableColumn fx:id="destinationPackageColumn"  text="Destination Package">
+                <cellValueFactory>
+                  <PropertyValueFactory property="destinationPackage"/>
+                </cellValueFactory>
+              </TableColumn>
+              <TableColumn fx:id="destinationClassColumn"  text="Destination Class">
+                <cellValueFactory>
+                  <PropertyValueFactory property="destinationClass"/>
+                </cellValueFactory>
+              </TableColumn>
+              <TableColumn fx:id="isExportedColumn"  text="Target is Exported">
+                <cellValueFactory>
+                  <PropertyValueFactory property="targetIsExported"/>
+                </cellValueFactory>
+              </TableColumn>
+            </columns>
+          </TableView>
+        </children>
+      </AnchorPane>
+      <AnchorPane minHeight="200.0" prefHeight="320.0">
+        <WebView fx:id="webView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+      </AnchorPane>
+    </SplitPane>
+  </children>
+  <HBox fx:id="connectionStatusBox" alignment="CENTER" style="-fx-background-color: red; -fx-padding: 2;">
+    <Label fx:id="connectionStatusLabel" text="Disconnected" style="-fx-font-size: 12px; -fx-text-fill: black;" />
+  </HBox>
+</VBox>
+
