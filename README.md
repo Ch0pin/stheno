@@ -16,6 +16,36 @@
 - **Logging and Reporting (TODO)**: Detailed logging of all activities and comprehensive reporting to aid in vulnerability assessment.
 
 
+## Installation 
+
+Stheno can be used either as a standalone tool or in conjunction with [Medusa](https://github.com/Ch0pin/medusa).
+
+### Standalone Usage:
+
+1. **Install the Requirements:**
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+2. **Build the Project:**
+   Navigate to the `Intent-monitor` folder and run:
+   ```sh
+   ./gradlew build
+   ```
+
+### Using with Medusa:
+
+If you are using Stheno with Medusa, only step 2 is necessary:
+
+1. **Build the Project:**
+   Navigate to the `Intent-monitor` folder and run:
+   ```sh
+   ./gradlew build
+   ```
+
+---
+
+
 ## Contributing
 
 We welcome contributions from the community! To contribute:
