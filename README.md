@@ -24,7 +24,7 @@
 
 Stheno can be used either as a standalone tool or in conjunction with [Medusa](https://github.com/Ch0pin/medusa).
 
-### Standalone Usage:
+### Standalone installation:
 
 1. **Install the Requirements:**
    ```sh
@@ -36,7 +36,6 @@ Stheno can be used either as a standalone tool or in conjunction with [Medusa](h
    ```sh
    ./gradlew build
    ```
-
 ### Using with Medusa:
 
 If you are using Stheno with Medusa, only step 2 is necessary:
@@ -46,8 +45,12 @@ If you are using Stheno with Medusa, only step 2 is necessary:
    ```sh
    ./gradlew build
    ```
-
 ---
+
+## Basic Usage:
+
+1. Run the python script defining the target app that you want to monitor (e.g. `python3 stheno.py -t com.foo.bar`)
+2. Run the monitor and got to menu->start to start monitoring the intents
 
 
 ## Contributing
