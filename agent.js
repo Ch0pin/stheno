@@ -98,6 +98,11 @@ Java.perform(function() {
 
     let activity = Java.use('android.app.Activity');
 
+    activity.onNewIntent.overload('android.content.Intent').implementation = function(intent){
+        dumpIntent(intent);   
+        this.onNewIntent(intent);
+     }
+
     activity.startActivity.overload('android.content.Intent', 'android.os.Bundle').implementation = function(intent, bundle){
         dumpIntent(intent);   
         this.startActivity(intent, bundle);
